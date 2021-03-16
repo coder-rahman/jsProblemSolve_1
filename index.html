@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="MD Mizanur Rahman">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>problemSolving</title>
+	<style type="text/css">
+	body{
+	background:#158DDD;
+	}
+	#wrapper{
+	width:90%;
+	height: auto;
+	background:#ddd;
+	margin:0 auto;
+	padding:10px 5px 10px 15px;
+	}
+	input{
+	line-height:25px;
+	padding:5px;
+	border:none;
+	border-radius:5px;
+	}
+	button{
+	font-family:georgia;
+	background:white;
+	line-height:25px;
+	padding:8px;
+	font-size:20px;
+	border:none;
+	border-radius:4px;
+	cursor:pointer;
+	}
+	p{
+	font-size:20px;
+	}
+	.hr{
+	background:white;
+	height:1px;
+	}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Problem : 01</h1>
+	<h3 id="time"></h3>
+	<button onclick="myFunction()">Click To Know Time</button><hr class="hr">
+	
+<h1>Problem : 02</h1>
+	<button onclick="window.print()">Click to Print</button><hr class="hr">
+<h1>Problem : 03</h1>
+	<h3 id="time2"></h3>
+	<button onclick="myFunction2()">Click To Know Time</button><hr class="hr">
+<h1>Problem : 04</h1>
+	<p>Length: <input type="number" id="length"  /></p>
+	<p>Width: <input type="number" id="width"  /></p>
+	<p>Height: <input type="number" id="height" /></p>
+	<button onclick="traingleArea()">See Result</button>
+	<h3 id="area" >Area of Traingle: </h3>
+</div>
+	<script type="text/javascript">
+	function myFunction(){
+		var date=new Date();
+		var toDay=['Sunday','Monday','Tuesday','Wednesday','Thirsday','Friday','Saturday'];
+		var toGetToday=toDay[date.getDay()];
+		var getHours=date.getHours();
+		var decrease=getHours-12;
+		
+		if(getHours<12){
+		document.getElementById('time').innerHTML='Today is : '+toGetToday+'<br>'+getHours+" : "+date.getMinutes()+' : '+date.getSeconds()+' A.M';
+		}else{
+		document.getElementById('time').innerHTML='Today is : '+toGetToday+'<br>'+decrease+" : "+date.getMinutes()+' : '+date.getSeconds()+' P.M ';
+		}
+	}
+	
+	function myFunction2(){
+		var date=new Date();
+		var yearss=date.getFullYear();
+		var monthss= date.getMonth()+1;
+		var toDayss=date.getDate();
+		
+		document.getElementById('time2').innerHTML=monthss+' - '+toDayss+' - '+yearss+'<br>'+
+		'Or,'+'<br>'+ monthss+' / '+toDayss+' / '+yearss;
+	}
+	function traingleArea(){
+		var x=document.getElementById('length').value;
+		var y=document.getElementById('width').value;
+		var z=document.getElementById('height').value;
+		var porisima= (x+y+z)/2;
+		var result=porisima*((porisima-x)*(porisima-y)*(porisima-z))
+		var resultArea=Math.sqrt(result);
+
+		document.getElementById('area').innerHTML='Area of Traingle: '+ resultArea+' SqUnit';
+	}
+	</script>
+</body>
+</html>
