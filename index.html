@@ -86,9 +86,9 @@
 		'Or,'+'<br>'+ monthss+' / '+toDayss+' / '+yearss;
 	}
 	function traingleArea(){
-		var x=document.getElementById('length').value;
-		var y=document.getElementById('width').value;
-		var z=document.getElementById('height').value;
+		var x=parseInt(document.getElementById('length').value);
+		var y=parseInt(document.getElementById('width').value);
+		var z=parseInt(document.getElementById('height').value);
 		var porisima= (x+y+z)/2;
 		var result=porisima*((porisima-x)*(porisima-y)*(porisima-z))
 		var resultArea=Math.sqrt(result);
